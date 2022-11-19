@@ -8,16 +8,17 @@ import {
   IconButton,
 } from "@mui/material";
 import { AddShoppingCart } from "@mui/icons-material";
+import classes from "./classes";
 
 const Product = ({ product }) => {
   return (
-    <Card>
+    <Card sx={classes.root}>
       <CardMedia
-        sx={{ height: 0, paddingTop: "56.25%" }} //  must specify height otherwise the image will not be visible.
+        sx={classes.media} //  must specify height otherwise the image will not be visible.
         image={product.image}
       />
       <CardContent>
-        <div>
+        <div sx={classes.cardContent}>
           <Typography gutterBottom variant="h5" component="h2">
             {product.name}
           </Typography>
@@ -34,7 +35,7 @@ const Product = ({ product }) => {
           </Typography>
         </div>
       </CardContent>
-      <CardActions disableSpacing>
+      <CardActions disableSpacing sx={classes.cardActions}>
         <IconButton aria-label="Add to Cart">
           <AddShoppingCart />
         </IconButton>
