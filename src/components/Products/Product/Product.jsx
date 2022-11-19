@@ -13,9 +13,8 @@ const Product = ({ product }) => {
   return (
     <Card>
       <CardMedia
-        //  sx={{ height: 0, paddingTop: "56.25%" }}
-        image={product.image.url}
-        title={product.name}
+        sx={{ height: 0, paddingTop: "56.25%" }} //  must specify height otherwise the image will not be visible.
+        image={product.image}
       />
       <CardContent>
         <div>
@@ -31,14 +30,11 @@ const Product = ({ product }) => {
             component="p"
           />
           <Typography variant="h5" component="h2">
-            {product.price.formatted_with_symbol}
+            {product.price}
           </Typography>
         </div>
       </CardContent>
-      <CardActions
-        disableSpacing
-        sx={{ display: "flex", justifyContent: "flex-end" }}
-      >
+      <CardActions disableSpacing>
         <IconButton aria-label="Add to Cart">
           <AddShoppingCart />
         </IconButton>
